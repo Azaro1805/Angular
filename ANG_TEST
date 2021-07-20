@@ -1,0 +1,149 @@
+	  alert("Hello, you changed the status, please change assigned to value");
+
+
+// var is work in all of the function unlike java 
+function doSomething{
+	for (var i = 0; i<5; i++){
+	
+	console.log(i)
+
+}
+
+console.log("finally i = " + i)
+}
+
+
+// let is work in function like java, only in the for loop. will rasie error compile like java and its great to see that, but it will run normaly like var !
+function doSomething{
+	for (let i = 0; i<5; i++){
+	
+	console.log(i)
+
+}
+
+console.log("finally i = " +  i)
+}
+
+
+// objects in JS 
+let a: number;
+let b: boolean;
+let c: string;
+let d: any;
+let e: number[] = [1,2,3];
+let f: any[] = [1,true,'a'];
+
+const ColorRed = 0;
+const ColorGreen = 1;
+const ColorBlue = 2;
+
+enum Color {Red, Green, Blue};
+let backgroundColor = Color.Red;
+
+// when we use {} in the input in the function we declare that point have the x,y cordi by type of number it called inline anotation 
+// but better and easy way to do it is interface like java (down)
+let drawPoint = (point: {x: number, y: number}) => {
+	//.....
+}
+
+drawPoint({
+	x:1,
+	y:2
+})
+
+// now lets do it with interface (when use interface start  with upercase)
+interface Point {
+	x: number, 
+	y: number,
+	
+	// This will get the developer a Point with a function that called drawPoint  
+	drawPoint()=> void 
+}
+
+// Here we use the interface insted of write all the parameters and this type every time
+let drawPoint = (point: Point) => {
+	//.....
+}
+
+//Class 
+class Point {
+	x: number;
+	y: number;
+	
+	constructor(x: number , y: number){
+		this.x = x;
+		this.y = y;
+	}
+	
+	// we can put public before the name of the funtion but not need .. optional
+	draw(){
+			console.log('X = ' + this.x + ' , Y = '+ this.y);
+	}
+	
+}
+
+// create object from class and use function (in main calss)
+let p1 = new Point(1,3);
+p1.draw();
+
+
+//Class private
+class Point {
+	private x: number;
+	private y: number;
+	
+}
+// other option in the constructor
+class Point {
+
+	constructor(private x: number, private y: number){
+		this.x = x;
+		this.y = y;
+	}
+
+// we cant change x value from outside the class. we will need to create set function
+p1.x = 3 //will not work 
+}
+
+// set with error 
+setX (value){
+	if(value<0){
+		throw new Error('value can't be lower then 0);
+	}
+	this.x = value;
+}
+	
+// if we do set/get X with space (set X) we can use it from outside but with upercase. Must be get X with upercase!!!
+setX (value){
+	if(value<0){
+		throw new Error('value can't be lower then 0);
+	}
+	this.x = value;
+}
+
+// p1.X and not p1.x normaly (private, with other implementation)
+p1.X 
+	
+// if i mark word and click F2 i will refactor like ctrl+Shift+R
+
+
+// if we add export before in the class headline it become moudle. if we want to use it from outside we need to import it like java.
+export class Point {}
+
+// the import
+import{ Point } from './point' // we can add more moudles in the {}
+
+
+// start building the components
+import { Component } from '@angular/core';
+
+@Component({
+	selector: 'courses',
+	template: '<h2>Courses</h2>'
+})
+
+export class CourseComponent{
+	
+}
+
+
